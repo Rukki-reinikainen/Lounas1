@@ -213,13 +213,18 @@
         const name = random.tags.name || 'Nimetön paikka';
         const mLat = random.lat;
         const mLon = random.lon;
+// Hae osoite Nominatimilta
+const addressResp = await fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${mLat}&lon=${mLon}`);
+const addressData = await addressResp.json();
+const address = addressData.display_name || 'osoite tuntematon';
 
         if (marker) map.removeLayer(marker);
         marker = L.marker([mLat, mLon]).addTo(map).bindPopup(name).openPopup();
         map.setView([mLat, mLon], 15);
 
         const typeText = type === 'cafe' ? 'kahvila' : type === 'restaurant' ? 'lounasravintola' : 'lounas/kahvila';
-        showMessage(`Ehdotus: <strong>${name}</strong> (${typeText}, ${radiusKm} km säteellä)`, 'success');
+        showMessage(`Ehdotus: <strong>${name}</strong> (${typeText}, ${radiusKm} km säteellä)<br><small>${address}</small>`, 'success');
+
       } catch (e) {
         showMessage('Virhe haettaessa tietoja. Yritä uudelleen myöhemmin.', 'danger');
       } finally {
