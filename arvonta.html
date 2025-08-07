@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <title>Ruokalaji-arvonta</title>
+    <style>
+      body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+      button { font-size: 1.2em; padding: 10px 20px; }
+      #tulos { margin-top: 30px; font-size: 1.5em; color: #1a8917; }
+    </style>
+</head>
+<body>
+    <h1>Mitä tänään syötäisiin?</h1>
+    <button onclick="arvoRuokalaji()">Arvo ruokalaji</button>
+    <div id="tulos"></div>
+
+    <script>
+      const ruokalajit = ["Kebab", "Tortilla", "Pizza", "Burger", "Salaatti"];
+      function arvoRuokalaji() {
+          const satunnainen = Math.floor(Math.random() * ruokalajit.length);
+          document.getElementById('tulos').innerText = "Syö: " + ruokalajit[satunnainen];
+      }
+    </script>
+</body>
+</html>
