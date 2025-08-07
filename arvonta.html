@@ -4,6 +4,49 @@
     <meta charset="UTF-8">
     <title>Ruokalaji-arvonta</title>
     <style>
+        body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg,#f7b733,#fc4a1a);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+h1 {
+  margin-top: 60px;
+  color: #fff;
+  text-shadow: 1px 2px 6px #a93a09;
+}
+#arvonta-btn, button {
+  background: linear-gradient(90deg, #36d1c4 0%, #1fa2ff 100%);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 18px 50px;
+  font-size: 1.3em;
+  font-weight: bold;
+  box-shadow: 0 4px 20px rgba(60,60,60,0.15);
+  margin-top: 30px;
+  transition: transform 0.1s, box-shadow 0.2s;
+  cursor: pointer;
+}
+#arvonta-btn:hover, button:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 30px rgba(31,162,255,0.28);
+}
+#tulos {
+  margin-top: 35px;
+  font-size: 2em;
+  color: #222;
+  background: #fff9c4;
+  display: inline-block;
+  border-radius: 18px;
+  padding: 25px 50px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  min-width: 200px;
+  min-height: 50px;
+  transition: background 0.3s;
+}
       body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
       button { font-size: 1.2em; padding: 10px 20px; }
       #tulos { margin-top: 30px; font-size: 1.5em; color: #1a8917; }
